@@ -5,7 +5,7 @@ WORKDIR /var/www/recruitment
 # OS
 RUN apt-get clean \
     && apt-get update \
-    && apt-get install -y git \
+    && apt-get install -y git wget \
     && a2enmod rewrite ssl \
     && apt-get install -y locales \
     && locale-gen en_US.UTF-8 \
@@ -24,9 +24,11 @@ RUN apt-get clean \
     && apt-get update \
     && apt-get install -y libzip-dev zip && docker-php-ext-install zip \
     && apt-get install -y libicu-dev && docker-php-ext-configure intl && docker-php-ext-install intl \
+    && docker-php-ext-install opcache \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+RUN wget https://get.symfony.com/cli/installer -O - | bash && mv ~/.symfony/bin/symfony /usr/local/bin/symfony
 
 # Apache
 RUN echo "ServerName recruitment.local" >> /etc/apache2/apache2.conf
