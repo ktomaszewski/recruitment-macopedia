@@ -1,0 +1,39 @@
+services:
+    application:
+        build:
+            context: 'docker/application'
+        container_name: 'recruitment-application'
+        tty: 'true'
+        stdin_open: 'true'
+        restart: 'on-failure'
+        volumes:
+            - '.:/var/www/recruitment'
+            - './docker/application/config/php.ini:/usr/local/etc/php/conf.d/100-php.ini'
+            - './docker/application/config/xdebug.ini:/usr/local/etc/php/conf.d/100-xdebug.ini'
+            - './docker/application/config/apache.conf:/etc/apache2/sites-enabled/100-default.conf'
+        ports:
+            - '80:80'
+            - '443:443'
+        networks:
+            network: { }
+
+    database:
+        build:
+            context: 'docker/database'
+        container_name: 'recruitment-database'
+        tty: 'true'
+        stdin_open: 'true'
+        restart: 'on-failure'
+        command: '--default-authentication-plugin=mysql_native_password'
+        volumes:
+            - './docker/database/data:/var/lib/mysql'
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root'
+        networks:
+            network: { }
+
+networks:
+    network:
+        name: 'recruitment-network'

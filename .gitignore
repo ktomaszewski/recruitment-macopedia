@@ -1,2 +1,6 @@
 # IDE
 .idea/
+
+# Docker
+docker-compose.yml
+docker/database/data/
