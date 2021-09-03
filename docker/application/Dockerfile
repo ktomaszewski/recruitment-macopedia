@@ -25,6 +25,7 @@ RUN apt-get clean \
     && apt-get install -y libzip-dev zip && docker-php-ext-install zip \
     && apt-get install -y libicu-dev && docker-php-ext-configure intl && docker-php-ext-install intl \
     && docker-php-ext-install opcache \
+    && docker-php-ext-install pdo_mysql \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
