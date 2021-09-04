@@ -14,8 +14,6 @@ services:
         ports:
             - '80:80'
             - '443:443'
-        networks:
-            network: { }
 
     database:
         build:
@@ -31,9 +29,3 @@ services:
             - '3306:3306'
         environment:
             MYSQL_ROOT_PASSWORD: 'root'
-        networks:
-            network: { }
-
-networks:
-    network:
-        name: 'recruitment-network'
