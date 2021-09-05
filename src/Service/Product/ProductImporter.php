@@ -8,7 +8,6 @@ use Application\Entity\Product;
 use Application\Form\Product\Model\ProductImportModel;
 use Application\Repository\ProductRepository;
 use Application\Util\Storage;
-use League\Csv\InvalidArgument;
 use League\Csv\Reader;
 use Psr\Log\LoggerInterface;
 use SplFileInfo;
@@ -48,7 +47,6 @@ final class ProductImporter
         );
     }
 
-    /** @throws InvalidArgument */
     public function importFromFile(SplFileInfo $splFileInfo): int
     {
         $importCounter = 0;
