@@ -4,3 +4,4 @@ import:
     form:
         file: Plik
         send: Wyślij
+    success: Plik został poprawnie wysłany!

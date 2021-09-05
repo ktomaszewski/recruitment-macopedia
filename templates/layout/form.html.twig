@@ -1,3 +1,18 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {% for child in form.children %}
+        <div>
+            {% if child.vars.name not in ['_token'] %}
+                <p class="form__label">{{ form_label(child) }}</p>
+            {% endif %}
+            {{ form_widget(child) }}
+
+            {% if child.vars.errors is defined %}
+                <div class="form_errors">
+                    {% for error in child.vars.errors %}
+                        <p>{{ error.message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
 {{ form_end(form) }}

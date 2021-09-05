@@ -1,0 +1,7 @@
+.form__label {
+    font-weight: bold;
+}
+
+.form_errors {
+    color: #f00;
+}
