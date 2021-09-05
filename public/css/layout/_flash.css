@@ -1,0 +1,16 @@
+.flash {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.flash-success {
+    background-color: #80ff9e;
+    color: #000;
+}
+
+.flash-error {
+    background-color: #ff3b3b;
+    color: #000;
+}

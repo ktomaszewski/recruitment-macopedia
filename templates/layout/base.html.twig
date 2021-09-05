@@ -8,6 +8,7 @@
         {% endblock %}
     </head>
     <body class="layout__body">
+        <div class="layout__flashes">{{ include('layout/flashes.html.twig') }}</div>
         <main class="layout__main">
             {% block layout_main %}{% endblock %}
         </main>

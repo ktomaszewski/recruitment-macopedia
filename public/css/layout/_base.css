@@ -10,3 +10,10 @@
     border-radius: 5px;
     padding: 15px;
 }
+
+.layout__flashes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+}
