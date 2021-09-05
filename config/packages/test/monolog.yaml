@@ -1,4 +1,5 @@
 monolog:
+    channels: ['product_import']
     handlers:
         main:
             type: fingers_crossed
@@ -10,3 +11,8 @@ monolog:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
+        product_import:
+            type: stream
+            path: "%kernel.logs_dir%/product_import.log"
+            level: info
+            channels: ['product_import']
