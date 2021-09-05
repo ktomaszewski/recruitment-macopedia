@@ -9,6 +9,10 @@ docker/database/data/
 phpunit.xml
 .phpunit.cache/
 
+# Storage
+storage/product/*
+!storage/product/.gitkeep
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php

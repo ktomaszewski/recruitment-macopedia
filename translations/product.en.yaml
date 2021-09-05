@@ -1,0 +1,6 @@
+import:
+    layout:
+        title: Products import
+    form:
+        file: File
+        send: Send
