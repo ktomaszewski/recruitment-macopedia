@@ -1,0 +1,9 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block layout_title %}
+    {{ 'import.layout.title'|trans({}, 'product') }}
+{% endblock %}
+
+{% block layout_body %}
+    {% include('layout/form.html.twig') %}
+{% endblock %}

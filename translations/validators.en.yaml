@@ -1,0 +1,4 @@
+product:
+    import:
+        file:
+            mime_type: The uploaded file does not have the correct type (CSV).

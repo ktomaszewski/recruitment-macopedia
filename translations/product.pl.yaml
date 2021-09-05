@@ -1,0 +1,6 @@
+import:
+    layout:
+        title: Import produktów
+    form:
+        file: Plik
+        send: Wyślij
