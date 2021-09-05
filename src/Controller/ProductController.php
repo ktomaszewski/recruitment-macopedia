@@ -43,7 +43,7 @@ final class ProductController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->productImporter->importFile($form->getData());
+            $this->productImporter->handleUploadedFile($form->getData());
 
             return new RedirectResponse($this->router->generate('app_product_import'), Response::HTTP_FOUND);
         }
