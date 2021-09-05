@@ -1,0 +1,12 @@
+.layout__body {
+    background-color: #efefef;
+}
+
+.layout__main {
+    width: 40%;
+    margin: 200px auto;
+    background-color: #fff;
+    border: 5px solid #000;
+    border-radius: 5px;
+    padding: 15px;
+}
